@@ -14,7 +14,7 @@
 
 \title{The Effects of Diet on Esterase Activity in Bean Beetles}
 \author{Samuel Deslandes \and Cynthia Duque \and Roseline Idoko}
-\date{\today}
+\date{}
 \begin{document}
 \maketitle
 
@@ -22,7 +22,7 @@
 \doublespacing
 
 \section{Introduction} 
-	\textit{Callosobruchus maculatus}, commonly referred to as Bean Beetles, are agricultural pests of Africa and Asia whose larvae feed and develop exclusively on the seed of legumes such as mung beans (\textit{Vigna radiata}) and cowpeas (\textit{Vigna unguiculata}) destroying the crop in the process.\footnote{\label{Handbook}Handbook} In order to combat these pests, organophosphate insecticides such as malaoxon have been used. These insecticides interfere with the insect's nervous system by inhibiting acetylcholinesterase (AChE), an important enzyme in the synaptic transmission process which breaks down the neurotransmitter acetylcholine, thus terminating the signal.\footnote{\label{manual}Manual} By inhibiting AChE signals are never terminated resulting in overestimation and the eventual death of the insect. 
+	\textit{Callosobruchus maculatus}, commonly referred to as Bean Beetles, are agricultural pests of Africa and Asia whose larvae feed and develop exclusively on the seed of legumes such as mung beans (\textit{Vigna radiata}) and cowpeas (\textit{Vigna unguiculata}) destroying the crop in the process.\footnote{\label{Handbook}A Handbook on Bean Beetles, \textit{Callosobruchus maculatus}} In order to combat these pests, organophosphate insecticides such as malaoxon have been used. These insecticides interfere with the insect's nervous system by inhibiting acetylcholinesterase (AChE), an important enzyme in the synaptic transmission process which breaks down the neurotransmitter acetylcholine, thus terminating the signal.\footnote{\label{manual}Summer 2016 Bio 10100 Course Supplement} By inhibiting AChE signals are never terminated resulting in overestimation and the eventual death of the insect. 
 	
 	Some insects however, have been documented to be able resist these insecticides. The food source for these insects seem to have an effect on the insect's ability to detoxify the insecticide. Different plants make use of various defensive chemicals to deter their predators. In response to this some insects have evolved mechanisms to detoxify the plant's defenses, one of which being through the detoxification activity of esterase enzymes. This method of resistance may also allow these insects to resist insecticides such as malaoxon, as the esterase enzymes would cleave the esters present in the insecticide, thus rendering it ineffective. It has however not yet been reported this method of detoxification is utilized by the Bean Beetles.\cref{manual} In order to address this, it hypothesized that different food sources will have different effects on the level of activity of esterase enzymes. The null hypothesis is that the food source has no effect on the level of esterase enzyme activity. 
 	
@@ -46,7 +46,7 @@
 			& \quad\textbullet\ Beetle strain \\
 			& \quad\textbullet\ Dye \\
 			& \quad\textbullet\ Incubation times \\
-			& \quad\textbullet\ Amount of substrate added\\ \hline
+			& \quad\textbullet\ Volume of crude extract used\\ \hline
 			Levels of treatment & 2\\
 			& \quad\textbullet\ Mung bean \\
 			& \quad\textbullet\ Cowpea\\ \hline
@@ -66,7 +66,7 @@
 	
 \section{Results}
 	The standardized curve made from the BSA solutions of known concentration can be seen in figure \ref{stdcurve}. The approximated function of the curve with an r-squared value of 0.986 is:
-	\begin{equation}
+	\begin{equation}\label{eq1}
 	F(x)=0.3976\ln x-1.2432
 	\end{equation}
 	
@@ -76,15 +76,82 @@
 		\caption{Plot of absorbance (\si{AU}) vs BSA concentration (\si{\micro\gram\per\milli\liter}) for solutions of known concentrations}
 		\label{stdcurve}
 	\end{figure}
+	In order to calculate the amount of protein present in the crude extract the inverse function of equation \ref{eq1} must be used:
+	\begin{equation}\label{eq2}
+		G(y)=e^{\frac{y+1.2432}{0.3976}}
+	\end{equation}
+	
+	Figure \ref{anae} below shows a comparison of the average absorance of the dye corrected for protein content for the \textalpha-naphtyl acetate substrate. The error bars represent the standard deviation for that food source. The calculated averages were 0.173 \si{AU\per\micro\gram} for the beetles reared on mung beans, and 0.160 \si{AU\per\micro\gram} for those reared on cowpeas. The standard deviations were 0.211 and 0.326 respectively.
+	\begin{figure}[h]
+		\centering
+		\includegraphics{ANAE.png}
+		\caption{\textalpha-naphtyl acetate substrate: Mean corrected absorbance for the beetles reared on mung beans and cowpeas. Error bars represent standard deviation.}
+		\label{anae}
+	\end{figure}
+	
+	The results of a two-tailed t-test between the food sources for the \textalpha-naphtyl acetate substrate can be found in table \ref{t-test1} below. For a confidence level of at least 95\% with 63 degrees of freedom, the calculated t-test value must be at least 1.998. The value calculated was 0.183, which implies a confidence level of approximately 14.44\%.\\
+	
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{|l|l|} \hline
+			$|t-calculated|$ & 0.183 \\ \hline
+			t critical for 95\% confidence level & 1.998 \\ \hline
+			D.F. & 63 \\ \hline
+			Confidence level & 14.44\% \\ \hline
+		\end{tabular}
+		\caption{T-test results for the comparison between the two levels of treatment for the \textalpha-naphtyl acetate substrate.}
+		\label{t-test1}
+	\end{table}
+	
+	Figure \ref{bnae} shows a comparison of the average absorance of the dye corrected for protein content for the \textbeta-naphtyl acetate substrate. The error bars represent the standard deviation for that food source. The calculated averages were 0.101 \si{AU\per\micro\gram} for those reared on mung beans, and 0.050 \si{AU\per\micro\gram} for those reared on cowpeas. The standard deviations were 0.123 and	0.110 respectively. 	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics{BNAE.png}
+		\caption{\textbeta-naphtyl acetate substrate: Mean corrected absorbance for the beetles reared on mung beans and cowpeas. Error bars represent standard deviation.}
+		\label{bnae}
+	\end{figure}
+	\newpage
+	Table \ref{t-test2} below shows the results of a two-tailed t-test between the food sources for the \textbeta-naphtyl acetate substrate. For a confidence level of at least 95\% with 43 degrees of freedom, the calculated t-test value must be at least 2.017. The value calculated was 0.1476, which implies a confidence level of approximately 85.28\%.\\
+	
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{|l|l|} \hline
+			$|t-calculated|$ & 1.476 \\ \hline
+			t critical for 95\% confidence level & 2.017 \\ \hline
+			D.F. & 43 \\ \hline
+			Confidence level & 85.28\% \\ \hline
+		\end{tabular}
+		\caption{T-test results for the comparison between the two levels of treatment for the \textalpha-naphtyl acetate substrate.}
+		\label{t-test2}
+	\end{table}
 \subsection{Sample calculation}
+\begin{align}
+\mathrm{\text{Raw protein absorbance sample data point}} = 0.818 \si{AU}\label{eq3}\\
+\mathrm{\text{Raw ANAE absorbance sample data point}} = 0.740 \si{AU}\label{eq4}\\
+\begin{aligned}
+	\mathrm{\text{Use eqution \ref{eq2} and \ref{eq3} to calculate protein concentration:}}\\
+		G(y)=e^{\frac{0.818.2432}{0.3976}}=178.41 \si{\micro\gram\per\milli\liter}
+\end{aligned}\\
+\begin{aligned}
+	\mathrm{\text{Multiply (5) by 50\si{\milli\liter}:}}\\
+	178.41*0.050=8.9205\si{\micro\gram}	
+\end{aligned}\\
+\begin{aligned}
+	\mathrm{\text{Divide (4) by (6) for protein corrected absorbance:}}\\
+	\frac{0.740}{8.9205}=0.0830
+	\si{AU\per\micro\gram}	
+\end{aligned}
+\end{align}
 
 \section{Discussion}
-
+It was hypothesized that different food sources would have different effects on the level of activity of esterase enzymes. Figure \ref{anae} shows a very minor difference in absorption (and in turn enzyme activity) between the two treatments, whereas in figure \ref{bnae} it appears that the mung bean treatment exhibited roughly twice the enzyme activity than the cowpea treatment. However, as shown in tables \ref{t-test1} and \ref{t-test2}, the confidence levels for both alpha and beta substrates did not meet the required threshold, therefore the differences between treatments for both substrates cannot be considered statistically significant and the alternate hypothesis must be rejected. The null hypothesis, which stated that the food source has no effect on the levels of enzyme activity is supported. 
 
 \subsection{Conclusion}
-
+Athough these reults suggest that the food source has no effect on the level of activity of esterase enzymes, perhaps there are other environmental factors which may affect enzyme activity. Factors such as climate, or the presence of certain chemicals in the air or soil may be contributing to the beetles' ability to detoxify insecticides such as maloxon. Further research and experimentation will have to be done to test these theories.
 
 \section{References}
+\noindent[1] ``BeanBeetles.org/A Handbook on Bean Beetles: Laboratory Methods'', Beanbeetles.org, 2016. [Online]. Available: \url{http://www.beanbeetles.org/handbook/}. [Accessed: 04- Jul- 2016].//
 
+\noindent[2] ``Course Suppliment for Biological Foundations I Bio 10100'', 2016. [Book]. Department of Biology City College of New York
 
 \end{document}
